@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "uvu": "^0.5.1"
+  },
+  "dependencies": {
+    "typescript": "^4.3.4"
   }
 }
