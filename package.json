@@ -4,6 +4,7 @@
   "description": "Rest api and domain code of Evermind",
   "main": "index.js",
   "scripts": {
+    "start": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ferran Llop Alonso",
