@@ -1,0 +1,11 @@
+{
+  "name": "goku",
+  "version": "0.0.1",
+  "description": "Rest api and domain code of Evermind",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ferran Llop Alonso",
+  "license": "ISC"
+}
