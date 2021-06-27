@@ -4,8 +4,9 @@
   "description": "Rest api and domain code of Evermind",
   "main": "index.js",
   "scripts": {
-    "start": "npx tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:tsc": "npx tsc && node ~/code/evermind/build/index.js",
+    "start": "node ~/code/evermind/app/src/index.js",
+    "test": "uvu ~/code/evermind/app/src/test"
   },
   "author": "Ferran Llop Alonso",
   "license": "ISC",
