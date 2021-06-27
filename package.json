@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start:tsc": "npx tsc && node ~/code/evermind/goku/build/index.js",
-    "start": "node ~/code/evermind/goku/app/src/index.js",
-    "test": "uvu ~/code/evermind/goku/app/src/test"
+    "start": "node ~/code/evermind/goku/src/app/index.js",
+    "test": "uvu ~/code/evermind/goku/src/test"
   },
   "author": "Ferran Llop Alonso",
   "license": "ISC",
