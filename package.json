@@ -4,9 +4,9 @@
   "description": "Rest api and domain code of Evermind",
   "main": "index.js",
   "scripts": {
-    "start:tsc": "npx tsc && node ~/code/evermind/build/index.js",
-    "start": "node ~/code/evermind/app/src/index.js",
-    "test": "uvu ~/code/evermind/app/src/test"
+    "start:tsc": "npx tsc && node ~/code/evermind/goku/build/index.js",
+    "start": "node ~/code/evermind/goku/app/src/index.js",
+    "test": "uvu ~/code/evermind/goku/app/src/test"
   },
   "author": "Ferran Llop Alonso",
   "license": "ISC",
