@@ -3,14 +3,17 @@
   "version": "0.0.1",
   "description": "Rest api and domain code of Evermind",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start:tsc": "npx tsc && node ~/code/evermind/goku/build/index.js",
     "start": "node ~/code/evermind/goku/src/app/index.js",
+    "start:watch": "nodemon ~/code/evermind/goku/src/app/index.js",
     "test": "uvu ~/code/evermind/goku/src/test"
   },
   "author": "Ferran Llop Alonso",
   "license": "ISC",
   "devDependencies": {
+    "nodemon": "^2.0.7",
     "uvu": "^0.5.1"
   },
   "dependencies": {
