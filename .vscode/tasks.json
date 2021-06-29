@@ -8,6 +8,14 @@
 			"problemMatcher": [],
 			"label": "npm: test",
 			"detail": "uvu ~/code/evermind/goku/src/test"
-		}
+		},
+		{
+			"type": "npm",
+			"script": "start:watch",
+			"group": "none",
+			"problemMatcher": [],
+			"label": "npm: start:watch",
+			"detail": "uvu ~/code/evermind/goku/src/app"
+		},
 	]
 }
