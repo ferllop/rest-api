@@ -1,6 +1,5 @@
-import { suite } from 'uvu'
+import { suite, assert } from '../testing.js'
 import { Response } from '../../app/api/response.js'
-import { strict as assert } from 'assert'
 
 const response = suite('Response')
 
