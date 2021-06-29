@@ -1,4 +1,8 @@
+import { precondition } from "./precondition"
+
 export class HttpMethod {
+
+  static #values = new Map()
   static DELETE = new HttpMethod('DELETE')
   static GET = new HttpMethod('GET')
   static PATCH = new HttpMethod('PATCH')
@@ -8,10 +12,19 @@ export class HttpMethod {
 
   constructor(method) {
     this.method = method
+    HttpMethod.#values.set(method, this)
   }
 
   toString() {
     return this.method
+  }
+
+  /**
+   * @param {string} value 
+   */
+  static ofValue(value) {
+    precondition(this.#values.has(value))
+    return HttpMethod.#values.get(value)
   }
   
 }
