@@ -3,7 +3,7 @@ import { HttpMethod } from './utils/httpMethod.js'
 import { Response, Router } from './api/router.js'
 
 const hostname = '127.0.0.1'
-const port = process.env.port || 3000
+const port = process.env.PORT || 3000
 const router = new Router()
 
 router.add(HttpMethod.GET, '/', new Response({ message: 'In Endpoint'}, 200))
