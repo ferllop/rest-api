@@ -1,4 +1,4 @@
-import { precondition } from "./precondition.js"
+import { precondition } from "../utils/precondition.js"
 
 export class HttpMethod {
 

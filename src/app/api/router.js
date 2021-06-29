@@ -1,6 +1,6 @@
 import { precondition } from '../utils/precondition.js'
 import { Response } from './response.js'
-import { HttpMethod } from '../utils/httpMethod.js'
+import { HttpMethod } from './httpMethod.js'
 
 class Router {
   endpoints

@@ -1,5 +1,5 @@
 import http from 'http'
-import { HttpMethod } from './utils/httpMethod.js'
+import { HttpMethod } from './api/httpMethod.js'
 import { Response, Router } from './api/router.js'
 
 const hostname = '127.0.0.1'
