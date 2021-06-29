@@ -1,7 +1,7 @@
-import { suite, test } from 'uvu'
-import { AssertionError, strict as assert } from 'assert'
+import { suite, assert } from '../testing.js'
 import { Router, Response } from '../../app/api/router.js'
 import { HttpMethod } from '../../app/api/httpMethod.js'
+import { PreconditionError } from '../../app/utils/precondition.js'
 
 const router = suite('router')
 const url = '/'
@@ -16,7 +16,7 @@ router.before.each(() => {
 
 router('should throw an error when adding an endpoint that is already added to the router', () => {
   routerSUT.add(...endpoint) 
-  assert.throws(() => routerSUT.add(...endpoint), AssertionError) 
+  assert.throws(() => routerSUT.add(...endpoint), PreconditionError) 
 })
 
 router('should add an endpoint that differs from other already present only in http method', () => {
