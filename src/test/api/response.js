@@ -10,12 +10,12 @@ response.before.each(() => {
 })
 
 response('should have default Content-Type header', () => {
-    assert(responseSUT.headers.hasOwnProperty('Content-Type'))    
+    assert(responseSUT.getHeaderOption('Content-Type'))    
 })
 
 response('should be able to replace the default Content-Type header', () => {
     const otherResponse = new Response({}, 200, {'Content-Type': 'test/content'})
-    assert(otherResponse.headers['Content-Type'] !== responseSUT.headers['Content-Type'])    
+    assert(otherResponse.getHeaderOption('Content-Type') !== responseSUT.getHeaderOption('Content-Type'))    
 })
 
 

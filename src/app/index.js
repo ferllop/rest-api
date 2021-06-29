@@ -10,9 +10,9 @@ router.add(HttpMethod.GET, '/', new Response({ message: 'In Endpoint'}, 200))
 
 const server = http.createServer((req, res) => {
   const response = router.respond(req.method, req.url)
-  res.statusCode = response.code
-  Object.keys(response.headers).forEach(option => res.setHeader(option, response.headers[option]))
-  res.end(JSON.stringify(response.data) + '\n')
+  res.statusCode = response.getCode()
+  Object.keys(response.headers).forEach(option => res.setHeader(option, response.getHeaderOption(option)))
+  res.end(JSON.stringify(response.getData()) + '\n')
 })
 
 server.listen(port, hostname, () => {
