@@ -16,11 +16,21 @@ class Router {
     this.endpoints.set(endpointId, response)
   }
 
+  /**
+   * @param {HttpMethod} method 
+   * @param {string} url 
+   * @returns {Response}
+   */
   respond(method, url) {
     const endpointId = Router.renderId(method, url)
     return this.endpoints.get(endpointId) ?? new Response({error: 'Not Found'}, 404)
   }
 
+  /**
+   * @param {HttpMethod} method 
+   * @param {string} url 
+   * @returns {string}
+   */
   static renderId(method, url) {
     const SEPARATOR = '#'
     return method + SEPARATOR + url
