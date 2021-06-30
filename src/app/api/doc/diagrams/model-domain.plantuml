@@ -1,0 +1,25 @@
+@startuml ApiRest Domain Model
+
+ApiRest *-- Router
+
+Router o-- Route
+
+Route *-- Endpoint
+Route *-- Handler
+
+Handler --> Response
+
+Response *-- data
+Response *-- code
+
+Endpoint *-- Id
+Endpoint *-- HttpMethod
+Endpoint *-- Url
+
+
+Url o-- param
+Url o-- query
+
+enum HttpMethod
+
+@enduml
