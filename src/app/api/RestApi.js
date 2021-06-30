@@ -1,6 +1,6 @@
 import { Endpoint } from "./endpoint.js"
 import { HttpMethod } from "./httpMethod.js"
-import { Response } from "./response.js"
+import { Route } from "./Route.js"
 import { Router } from "./router.js"
 
 export class RestApi {
@@ -9,18 +9,19 @@ export class RestApi {
 
     /**
      * @param {Router} router
+     * @param {Route[]} routes
      */
-    constructor(router) {
+    constructor(router, routes) {
         this.#router = router
+        routes.forEach(route => this.addRoute(route))
     }
 
     /**
      * 
-     * @param {Endpoint} endpoint
-     * @param {Response} response 
+     * @param {Route} route
      */
-    addRoute(endpoint, response) {
-        this.#router.addRoute(endpoint, response)
+    addRoute(route) {
+        this.#router.addRoute(route)
     }
 
     /**
