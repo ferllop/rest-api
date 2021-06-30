@@ -1,6 +1,6 @@
 import { suite, assert } from '../testing.js'
-import { Router, Response } from '../../app/api/router.js'
-import { HttpMethod } from '../../app/api/httpMethod.js'
+import { Router, Response } from '../../app/api/Router.js'
+import { HttpMethod } from '../../app/api/HttpMethod.js'
 import { PreconditionError } from '../../app/utils/precondition.js'
 import { EndpointMother } from './EndpointMother.js'
 import { Route } from '../../app/api/Route.js'

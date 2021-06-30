@@ -1,5 +1,5 @@
-import { Endpoint } from "./endpoint.js";
-import { Response } from "./response.js";
+import { Endpoint } from "./Endpoint.js";
+import { Response } from "./Response.js";
 
 export class Route {
     /**@type {Endpoint} */

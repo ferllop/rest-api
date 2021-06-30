@@ -1,7 +1,7 @@
-import { Endpoint } from "./endpoint.js"
-import { HttpMethod } from "./httpMethod.js"
+import { Endpoint } from "./Endpoint.js"
+import { HttpMethod } from "./HttpMethod.js"
 import { Route } from "./Route.js"
-import { Router } from "./router.js"
+import { Router } from "./Router.js"
 
 export class RestApi {
     /** @type {Router} */

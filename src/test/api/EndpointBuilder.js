@@ -1,14 +1,14 @@
-import { HttpMethod } from '../../app/api/httpMethod.js';
-import { Endpoint } from '../../app/api/endpoint.js';
+import { HttpMethod } from '../../app/api/HttpMethod.js'
+import { Endpoint } from '../../app/api/Endpoint.js'
 
 export class EndpointBuilder {
   /**@type {HttpMethod}*/
-  #method;
-  #url;
+  #method
+  #url
 
   constructor() {
-    this.#method = HttpMethod.GET;
-    this.#url = '/';
+    this.#method = HttpMethod.GET
+    this.#url = '/'
   }
 
   /**
@@ -16,8 +16,8 @@ export class EndpointBuilder {
    * @returns {EndpointBuilder}
    */
   setMethod(method) {
-    this.#method = method;
-    return this;
+    this.#method = method
+    return this
   }
 
   /**
@@ -25,12 +25,12 @@ export class EndpointBuilder {
    * @returns {EndpointBuilder}
    */
   setUrl(url) {
-    this.#url = url;
-    return this;
+    this.#url = url
+    return this
   }
 
   /**@returns {Endpoint} */
   build() {
-    return new Endpoint(this.#method, this.#url);
+    return new Endpoint(this.#method, this.#url)
   }
 }

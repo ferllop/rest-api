@@ -1,12 +1,11 @@
 import { precondition } from '../utils/precondition.js'
-import { Response } from './response.js'
-import { Endpoint } from './endpoint.js'
+import { Response } from './Response.js'
+import { Endpoint } from './Endpoint.js'
 import { Route } from './Route.js'
 
 class Router {
   /**@type {Map<string, Response>} */
   #routes
-
 
   constructor() {
     this.#routes = new Map()

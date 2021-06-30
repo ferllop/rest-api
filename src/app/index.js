@@ -1,7 +1,7 @@
 import http from 'http'
 import { RestApi } from './api/RestApi.js'
 import { routes } from './api/routes.js'
-import { Router } from './api/router.js'
+import { Router } from './api/Router.js'
 
 const hostname = '127.0.0.1'
 const port = Number(process.env.PORT || 3000)

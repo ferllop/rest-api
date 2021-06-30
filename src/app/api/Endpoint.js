@@ -1,4 +1,4 @@
-import { HttpMethod } from "./httpMethod.js"
+import { HttpMethod } from "./HttpMethod.js"
 
 export class Endpoint {
     /**type {HttpMethod} */
