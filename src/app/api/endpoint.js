@@ -1,3 +1,5 @@
+import { HttpMethod } from "./httpMethod.js"
+
 export class Endpoint {
     /**type {HttpMethod} */
     #method
@@ -10,17 +12,17 @@ export class Endpoint {
         this.#url = url
     }
 
+    /** @returns {HttpMethod} */
     getMethod() {
         return this.#method
     }
 
+    /** @returns {string} */
     getUrl() {
         return this.#url
     }
 
-    /**
-   * @returns {string}
-   */
+    /** @returns {string} */
     getId() {
         const SEPARATOR = '#'
         return this.#method + SEPARATOR + this.#url

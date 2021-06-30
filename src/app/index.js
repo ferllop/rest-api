@@ -1,21 +1,25 @@
-import http from 'http'
 import { Endpoint } from './api/endpoint.js'
 import { HttpMethod } from './api/httpMethod.js'
 import { Response, Router } from './api/router.js'
+import { RestApi } from './api/RestApi.js'
+import http from 'http'
 
 const hostname = '127.0.0.1'
 const port = Number(process.env.PORT || 3000)
+
 const router = new Router()
+router.addRoute(new Endpoint(HttpMethod.GET, '/'), new Response({ message: 'In Endpoint' }, 200))
 
-router.addRoute(new Endpoint(HttpMethod.GET, '/'), new Response({ message: 'In Endpoint'}, 200))
+const api = new RestApi(router)
 
-const server = http.createServer((req, res) => {
-  const response = router.respond(new Endpoint(HttpMethod.ofValue(req.method), req.url))
-  res.statusCode = response.getCode()
-  Object.keys(response.getHeaders()).forEach(option => res.setHeader(option, response.getHeaderOption(option)))
-  res.end(JSON.stringify(response.getData()) + '\n')
+http.createServer((incomingMessage, serverResponse) => {
+  const apiResponse = api.onRequest(incomingMessage.method, incomingMessage.url)
+  serverResponse.statusCode = apiResponse.statusCode
+  Object.keys(apiResponse.headers).forEach(option => {
+    serverResponse.setHeader(option, apiResponse.headers[option])
+  })
+  serverResponse.end(JSON.stringify(apiResponse.data) + '\n')
+}).listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}`)
 })
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`)
-})
