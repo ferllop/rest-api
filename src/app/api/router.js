@@ -1,40 +1,40 @@
 import { precondition } from '../utils/precondition.js'
 import { Response } from './response.js'
-import { HttpMethod } from './httpMethod.js'
+import { Endpoint } from './endpoint.js'
 
 class Router {
-  endpoints
+  #routes
 
   constructor() {
-    this.endpoints = new Map()
-  }
-
-  add(method, url, response) {
-    const endpointId = Router.renderId(method, url) 
-    precondition(!this.endpoints.has(endpointId))
-
-    this.endpoints.set(endpointId, response)
+    this.#routes = new Map()
   }
 
   /**
-   * @param {HttpMethod} method 
-   * @param {string} url 
+   * 
+   * @param {Endpoint} endpoint 
+   * @param {Response} response 
+   */
+  addRoute(endpoint, response) {
+    const endpointId = endpoint.getId() 
+    precondition(!this.#routes.has(endpointId))
+
+    this.#routes.set(endpointId, response)
+  }
+
+  /**
+   * @param {Endpoint} endpoint 
    * @returns {Response}
    */
-  respond(method, url) {
-    const endpointId = Router.renderId(method, url)
-    return this.endpoints.get(endpointId) ?? new Response({error: 'Not Found'}, 404)
+  respond(endpoint) {
+    const endpointId = endpoint.getId()
+    return this.#routes.get(endpointId) ?? new Response({error: 'Not Found'}, 404)
   }
 
-  /**
-   * @param {HttpMethod} method 
-   * @param {string} url 
-   * @returns {string}
-   */
-  static renderId(method, url) {
-    const SEPARATOR = '#'
-    return method + SEPARATOR + url
+  /**@returns {number} */
+  routesCount() {
+    return this.#routes.size
   }
+
 }
 
 export {
