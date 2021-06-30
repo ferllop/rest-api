@@ -31,13 +31,15 @@ export class RestApi {
      * @returns {{statusCode: number, headers: object, data: object}} 
      */
     onRequest(method, url) {
-        const routerResponse = this.#router.respond(
+        const controller = this.#router.respond(
             new Endpoint(HttpMethod.ofValue(method), url)
         )
+        
+        const response = controller(url)
         return {
-            statusCode: routerResponse.getCode(),
-            headers: routerResponse.getHeaders(),
-            data: routerResponse.getData()
+            statusCode: response.getCode(),
+            headers: response.getHeaders(),
+            data: response.getData()
         }
     }
 }

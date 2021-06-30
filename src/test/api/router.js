@@ -8,7 +8,7 @@ import { Route } from '../../app/api/Route.js'
 const router = suite('router')
 const code = 200
 const endpoint = EndpointMother.default()
-const response = new Response({ message: 'works' }, code)
+const response = () => new Response({ message: 'works' }, code)
 
 /** @type {Router} */
 let routerSUT

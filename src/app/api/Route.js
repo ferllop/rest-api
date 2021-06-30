@@ -5,15 +5,15 @@ export class Route {
     /**@type {Endpoint} */
     endpoint
 
-    /** @type {Response} */
-    response
+    /** @type {(url) => Response} */
+    controller
 
     /**
      * @param {Endpoint} endpoint 
-     * @param {Response} response 
+     * @param {() => Response} controller 
      */
-    constructor(endpoint, response) {
+    constructor(endpoint, controller) {
         this.endpoint = endpoint;
-        this.response = response;
+        this.controller = controller;
     }
 }
