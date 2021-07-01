@@ -1,6 +1,6 @@
-import { HttpMethod } from '../../app/api/HttpMethod.js'
-import { PreconditionError } from '../../app/utils/precondition.js'
-import { suite, assert } from '../testing.js'
+import { HttpMethod } from '../src/HttpMethod.js'
+import { PreconditionError } from '../lib/precondition.js'
+import { suite, assert } from './testing.config.js'
 
 const httpMethod = suite('HttpMethod')
 

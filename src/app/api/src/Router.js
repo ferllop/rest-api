@@ -1,8 +1,7 @@
-import { precondition } from '../utils/precondition.js'
+import { precondition } from '../lib/precondition.js'
 import { Response } from './Response.js'
 import { Endpoint } from './Endpoint.js'
 import { Route } from './Route.js'
-import notFound from './controllers/notFound.js'
 
 class Router {
   /** @type {Map<string, (url) => Response>} */
@@ -29,7 +28,7 @@ class Router {
    */
   respond(endpoint) {
     const endpointId = endpoint.getId()
-    return this.#routes.get(endpointId) ?? notFound.notFound
+    return this.#routes.get(endpointId) ?? ((url) => new Response({error: 'Not Found'}, 404))
   }
 
   /**@returns {number} */

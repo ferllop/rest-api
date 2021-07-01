@@ -1,5 +1,5 @@
-import { suite, assert } from '../testing.js'
-import { Response } from '../../app/api/Response.js'
+import { suite, assert } from './testing.config.js'
+import { Response } from '../src/Response.js'
 
 const response = suite('Response')
 

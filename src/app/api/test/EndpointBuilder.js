@@ -1,5 +1,5 @@
-import { HttpMethod } from '../../app/api/HttpMethod.js'
-import { Endpoint } from '../../app/api/Endpoint.js'
+import { HttpMethod } from '../src/HttpMethod.js'
+import { Endpoint } from '../src/Endpoint.js'
 
 export class EndpointBuilder {
   /**@type {HttpMethod}*/

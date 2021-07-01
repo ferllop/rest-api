@@ -8,7 +8,7 @@
     "start:tsc": "npx tsc && node ~/code/evermind/goku/build/index.js",
     "start": "node ~/code/evermind/goku/src/app/index.js",
     "start:watch": "nodemon ~/code/evermind/goku/src/app/index.js",
-    "test": "uvu ~/code/evermind/goku/src/test"
+    "test": "uvu ~/code/evermind/goku/"
   },
   "author": "Ferran Llop Alonso",
   "license": "ISC",

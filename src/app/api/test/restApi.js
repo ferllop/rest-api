@@ -1,8 +1,8 @@
-import { Response, Router } from '../../app/api/Router.js'
-import { RestApi } from '../../app/api/RestApi.js'
-import { suite, assert } from '../testing.js'
+import { Response, Router } from '../src/Router.js'
+import { RestApi } from '../src/RestApi.js'
+import { suite, assert } from './testing.config.js'
 import { EndpointMother } from './EndpointMother.js'
-import { Route } from '../../app/api/Route.js'
+import { Route } from '../src/Route.js'
 
 const restApi = suite('RestApi')
 

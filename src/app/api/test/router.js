@@ -1,9 +1,9 @@
-import { suite, assert } from '../testing.js'
-import { Router, Response } from '../../app/api/Router.js'
-import { HttpMethod } from '../../app/api/HttpMethod.js'
-import { PreconditionError } from '../../app/utils/precondition.js'
+import { suite, assert } from './testing.config.js'
+import { Router, Response } from '../src/Router.js'
+import { HttpMethod } from '../src/HttpMethod.js'
+import { PreconditionError } from '../lib/precondition.js'
 import { EndpointMother } from './EndpointMother.js'
-import { Route } from '../../app/api/Route.js'
+import { Route } from '../src/Route.js'
 
 const router = suite('router')
 const code = 200
