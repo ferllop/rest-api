@@ -1,20 +1,5 @@
-import http from 'http'
-import { RestApi } from './lib/api/index.js'
-import { routes } from './src/routes.js'
-
-const hostname = '127.0.0.1'
-const port = Number(process.env.PORT || 3000)
-
-const api = new RestApi(routes)
-
-http.createServer((incomingMessage, serverResponse) => {
-  const apiResponse = api.onRequest(incomingMessage.method, incomingMessage.url)
-  serverResponse.statusCode = apiResponse.statusCode
-  Object.keys(apiResponse.headers).forEach(option => {
-    serverResponse.setHeader(option, apiResponse.headers[option])
-  })
-  serverResponse.end(JSON.stringify(apiResponse.data) + '\n')
-}).listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}`)
-})
-
+export { Endpoint } from "./src/Endpoint.js"
+export { HttpMethod } from "./src/HttpMethod.js"
+export { RestApi } from './src/RestApi.js'
+export { Response } from './src/Response.js'
+export { Route } from "./src/Route.js"
