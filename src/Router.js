@@ -12,7 +12,6 @@ export class Router {
   }
 
   /**
-   * 
    * @param {Route} route 
    */
   addRoute(route) {
@@ -28,7 +27,7 @@ export class Router {
    */
   respond(endpoint) {
     const endpointId = endpoint.getId()
-    return this.#routes.get(endpointId) ?? ((url) => new Response({error: 'Not Found'}, 404))
+    return this.#routes.get(endpointId) ?? (() => new Response({error: 'Not Found'}, 404))
   }
 
   /**@returns {number} */

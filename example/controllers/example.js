@@ -1,7 +1,7 @@
 import { Response } from '../../index.js'
 
 export default {
-    root: (url) => {
+    root: () => {
         return new Response({ message: 'In Endpoint' }, 200)
     }
 }

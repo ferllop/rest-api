@@ -7,11 +7,17 @@
   "scripts": {
     "start": "node ./example/server.js",
     "start:watch": "nodemon ./example/server.js",
-    "test": "uvu ./test"
+    "test": "uvu ./test",
+    "lint": "eslint ./"
   },
   "author": "Ferran Llop Alonso",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/eslint-parser": "^7.14.7",
+    "@babel/preset-env": "^7.14.7",
+    "eslint": "^7.29.0",
+    "eslint-plugin-jsdoc": "^35.4.1",
     "nodemon": "^2.0.9",
     "uvu": "^0.5.1"
   },
