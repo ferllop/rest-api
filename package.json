@@ -5,13 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./index.js",
-    "start:watch": "nodemon ~/code/almighty-simple-rest-api/index.js",
+    "start": "node ./example/server.js",
+    "start:watch": "nodemon ./example/server.js",
     "test": "uvu ./test"
   },
   "author": "Ferran Llop Alonso",
   "license": "ISC",
   "devDependencies": {
+    "nodemon": "^2.0.9",
     "uvu": "^0.5.1"
   },
   "dependencies": {}
