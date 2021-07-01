@@ -3,7 +3,7 @@ import { Response } from './Response.js'
 import { Endpoint } from './Endpoint.js'
 import { Route } from './Route.js'
 
-class Router {
+export class Router {
   /** @type {Map<string, (url) => Response>} */
   #routes
 
@@ -36,9 +36,4 @@ class Router {
     return this.#routes.size
   }
 
-}
-
-export {
-  Response,
-  Router
 }

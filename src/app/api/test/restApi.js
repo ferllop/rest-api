@@ -1,4 +1,4 @@
-import { Response, Router } from '../src/Router.js'
+import { Response } from '../src/Response.js'
 import { RestApi } from '../src/RestApi.js'
 import { suite, assert } from './testing.config.js'
 import { EndpointMother } from './EndpointMother.js'
