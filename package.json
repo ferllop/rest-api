@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "start:tsc": "npx tsc && node ~/code/evermind/goku/build/index.js",
-    "start": "node ~/code/evermind/src/app/index.js",
-    "start:watch": "nodemon ~/code/evermind/src/app/index.js",
+    "start": "node ~/code/evermind/index.js",
+    "start:watch": "nodemon ~/code/evermind/index.js",
     "test": "uvu ~/code/evermind/test",
     "test:api": "uvu ~/code/evermind/lib/api/test"
   },
