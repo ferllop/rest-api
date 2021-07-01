@@ -9,7 +9,7 @@ const restApi = suite('RestApi')
 /** @type {RestApi} */
 let serverSUT
 restApi.before.each(() => {
-    serverSUT = new RestApi(new Router(), [])
+    serverSUT = new RestApi([])
 })
 
 restApi('should respond with the response predefined in an endpoint', () => {

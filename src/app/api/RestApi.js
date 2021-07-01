@@ -8,11 +8,10 @@ export class RestApi {
     #router
 
     /**
-     * @param {Router} router
      * @param {Route[]} routes
      */
-    constructor(router, routes) {
-        this.#router = router
+    constructor(routes) {
+        this.#router = new Router()
         routes.forEach(route => this.addRoute(route))
     }
 

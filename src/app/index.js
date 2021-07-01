@@ -1,13 +1,11 @@
 import http from 'http'
 import { RestApi } from './api/RestApi.js'
 import { routes } from './api/routes.js'
-import { Router } from './api/Router.js'
 
 const hostname = '127.0.0.1'
 const port = Number(process.env.PORT || 3000)
 
-const router = new Router()
-const api = new RestApi(router, routes)
+const api = new RestApi(routes)
 
 http.createServer((incomingMessage, serverResponse) => {
   const apiResponse = api.onRequest(incomingMessage.method, incomingMessage.url)
