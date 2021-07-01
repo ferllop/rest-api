@@ -1,4 +1,4 @@
-import { Endpoint, HttpMethod, Route } from './api/index.js'
+import { Endpoint, HttpMethod, Route } from '../../lib/api/index.js'
 import root from './controllers/root.js'
 
 export const routes = [

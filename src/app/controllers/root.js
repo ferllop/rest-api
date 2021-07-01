@@ -1,4 +1,4 @@
-import { Response } from "../api/src/Response.js"
+import { Response } from "../../../lib/api/src/Response.js"
 
 export default {
     root: (url) => {
