@@ -1,0 +1,3 @@
+[submodule "lib/preconditions"]
+	path = lib/preconditions
+	url = git@github.com:ferllop/preconditions.git

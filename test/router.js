@@ -1,7 +1,7 @@
 import { suite, assert } from './testing.config.js'
 import { Router } from '../src/Router.js'
 import { HttpMethod } from '../src/HttpMethod.js'
-import { PreconditionError } from '../lib/precondition.js'
+import { PreconditionError } from '../lib/preconditions/precondition.js'
 import { EndpointMother } from './EndpointMother.js'
 import { Route } from '../src/Route.js'
 import { Response } from '../src/Response.js'
