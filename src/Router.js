@@ -1,4 +1,3 @@
-import { precondition } from './preconditions.js'
 import { Response } from './Response.js'
 import { Endpoint } from './Endpoint.js'
 import { Route } from './Route.js'
@@ -16,7 +15,10 @@ export class Router {
    */
   addRoute(route) {
     const endpointId = route.endpoint.getId() 
-    precondition(!this.#routes.has(endpointId))
+    
+    if (this.#routes.has(endpointId)) {
+      throw new Error('Route already exists')
+    }
 
     this.#routes.set(endpointId, route.controller)
   }

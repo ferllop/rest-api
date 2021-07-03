@@ -9,7 +9,8 @@ httpMethod(
         assert(HttpMethod.ofValue('GET') === HttpMethod.GET)
     })
 
-    httpMethod('should throw a PreconditionError', () => {
+    httpMethod('should throw a PreconditionError if fetching a nonexistent HttpMethod', () => {
+        process.env.ENABLE_PRECONDITIONS = 'true'
         assert.throws(() => HttpMethod.ofValue('NONEXISTENT'), PreconditionError )
     })
 
