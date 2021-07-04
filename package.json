@@ -1,6 +1,6 @@
 {
   "name": "almighty-simple-rest-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple rest api",
   "main": "index.js",
   "type": "module",
@@ -22,6 +22,6 @@
     "uvu": "^0.5.1"
   },
   "dependencies": {
-    "preconditions": "github:ferllop/preconditions"
+    "preconditions": "ferllop/preconditions#semver:1.x.x"
   }
 }
