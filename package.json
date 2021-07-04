@@ -22,6 +22,6 @@
     "uvu": "^0.5.1"
   },
   "dependencies": {
-    "preconditions": "github:ferllop/preconditions"
+    "preconditions": "ferllop/preconditions#semver:1.x.x"
   }
 }
