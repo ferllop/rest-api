@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "ENABLE_PRECONDITIONS node ./example/server.js",
-    "start:watch": "ENABLE_PRECONDITIONS=true nodemon ./example/server.js",
+    "example": "ENABLE_PRECONDITIONS node ./example/server.js",
+    "example:watch": "ENABLE_PRECONDITIONS=true nodemon ./example/server.js",
     "test": "ENABLE_PRECONDITIONS=true uvu ./test",
     "lint": "eslint ./"
   },
