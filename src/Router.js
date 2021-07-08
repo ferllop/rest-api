@@ -1,6 +1,7 @@
 import { Response } from './Response.js'
 import { Endpoint } from './Endpoint.js'
 import { Route } from './Route.js'
+import { precondition } from './preconditions.js'
 
 export class Router {
   /** @type {Map<string, (url) => Response>} */
@@ -14,13 +15,16 @@ export class Router {
    * @param {Route} route 
    */
   addRoute(route) {
-    const endpointId = route.endpoint.getId() 
-    
-    if (this.#routes.has(endpointId)) {
-      throw new Error('Route already exists')
-    }
+    precondition(!this.hasRoute(route))
+    this.#routes.set(route.endpoint.getId(), route.controller)
+  }
 
-    this.#routes.set(endpointId, route.controller)
+  /**
+   * @param {Route} route 
+   * @returns {boolean}
+   */
+  hasRoute(route) {
+    return this.#routes.has(route.endpoint.getId())
   }
 
   /**
