@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./example/server.js",
-    "start:watch": "nodemon ./example/server.js",
-    "test": "uvu ./test",
+    "start": "ENABLE_PRECONDITIONS node ./example/server.js",
+    "start:watch": "ENABLE_PRECONDITIONS=true nodemon ./example/server.js",
+    "test": "ENABLE_PRECONDITIONS=true uvu ./test",
     "lint": "eslint ./"
   },
   "author": "Ferran Llop Alonso",
