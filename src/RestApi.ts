@@ -15,12 +15,12 @@ export class RestApi {
         this.router.addRoute(route)
     }
 
-    onRequest(method: string, url: string): {statusCode: number, headers: object, data: object} {
+    async onRequest(method: string, url: string): Promise<{statusCode: number, headers: Record<string, string>, data: object}> {
         const controller = this.router.respond(
             new Endpoint(HttpMethod.ofValue(method), url)
         )
         
-        const response = controller(url)
+        const response = await controller(url)
         return {
             statusCode: response.getCode(),
             headers: response.getHeaders(),

@@ -11,8 +11,7 @@
     "compile": "tsc -p tsconfig.build.json",
     "build": "npm run compile",
     "prepare": "npm run build",
-    "example": "ENABLE_PRECONDITIONS=true node ./example/server.js",
-    "example:watch": "ENABLE_PRECONDITIONS=true nodemon ./example/server.js",
+    "example": "ENABLE_PRECONDITIONS=true tsm ./example/server.ts",
     "test": "ENABLE_PRECONDITIONS=true uvu -r tsm ./test"
   },
   "author": "Ferran Llop Alonso",
@@ -20,7 +19,6 @@
   "devDependencies": {
     "@tsconfig/node16": "1.0.2",
     "@types/node": "17.0.18",
-    "nodemon": "^2.0.9",
     "tsm": "2.2.1",
     "typescript": "4.5.5",
     "uvu": "^0.5.1"
