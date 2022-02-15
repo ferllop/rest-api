@@ -10,6 +10,7 @@
   "scripts": {
     "compile": "tsc -p tsconfig.build.json",
     "build": "npm run compile",
+    "prepare": "npm run build",
     "example": "ENABLE_PRECONDITIONS=true node ./example/server.js",
     "example:watch": "ENABLE_PRECONDITIONS=true nodemon ./example/server.js",
     "test": "ENABLE_PRECONDITIONS=true uvu -r tsm ./test"
