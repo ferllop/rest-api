@@ -1,4 +1,4 @@
-import { Endpoint, HttpMethod, Route } from '../index.js'
+import { Endpoint, HttpMethod, Route } from '../build/index.js'
 import exampleController from './controllers/example.js'
 
 export const routes = [

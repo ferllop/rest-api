@@ -11,8 +11,7 @@ const code = 200
 const endpoint = EndpointMother.default()
 const response = () => new Response({ message: 'works' }, code)
 
-/** @type {Router} */
-let routerSUT
+let routerSUT: Router
 
 router.before.each(() => {
   routerSUT = new Router()

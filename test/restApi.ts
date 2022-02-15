@@ -6,8 +6,7 @@ import { Route } from '../src/Route.js'
 
 const restApi = suite('RestApi')
 
-/** @type {RestApi} */
-let serverSUT
+let serverSUT: RestApi
 restApi.before.each(() => {
     serverSUT = new RestApi([])
 })

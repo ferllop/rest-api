@@ -1,5 +1,5 @@
 import http from 'http';
-import { RestApi } from '../index.js';
+import { RestApi } from '../build/index.js';
 import { routes } from './routes.js'
 
 const hostname = '127.0.0.1';

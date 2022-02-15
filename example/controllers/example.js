@@ -1,4 +1,4 @@
-import { Response } from '../../index.js'
+import { Response } from '../../build/index.js'
 
 export default {
     root: () => {

@@ -4,33 +4,19 @@ import { Route } from "./Route.js"
 import { Router } from "./Router.js"
 
 export class RestApi {
-    /** @type {Router} */
-    #router
+    private router: Router
 
-    /**
-     * @param {Route[]} routes
-     */
-    constructor(routes) {
-        this.#router = new Router()
+    constructor(routes: Route[]) {
+        this.router = new Router()
         routes.forEach(route => this.addRoute(route))
     }
 
-    /**
-     * 
-     * @param {Route} route
-     */
-    addRoute(route) {
-        this.#router.addRoute(route)
+    addRoute(route: Route) {
+        this.router.addRoute(route)
     }
 
-    /**
-     * 
-     * @param {string} method
-     * @param {string} url 
-     * @returns {{statusCode: number, headers: object, data: object}} 
-     */
-    onRequest(method, url) {
-        const controller = this.#router.respond(
+    onRequest(method: string, url: string): {statusCode: number, headers: object, data: object} {
+        const controller = this.router.respond(
             new Endpoint(HttpMethod.ofValue(method), url)
         )
         

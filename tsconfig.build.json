@@ -4,6 +4,7 @@
       "tests/**/*"
     ],
     "compilerOptions": {
-      "outDir": "./build",                              /* Redirect output structure to the directory. */
+      "outDir": "./build",
+      "noEmit": false,
     }
   }

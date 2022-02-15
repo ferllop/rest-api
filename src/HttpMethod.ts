@@ -1,8 +1,9 @@
 import { precondition } from "./preconditions.js"
 
+
 export class HttpMethod {
 
-  static #values = new Map()
+  private static values = new Map()
   static DELETE = new HttpMethod('DELETE')
   static GET = new HttpMethod('GET')
   static PATCH = new HttpMethod('PATCH')
@@ -10,21 +11,17 @@ export class HttpMethod {
   static PUT = new HttpMethod('PUT')
   static UPDATE = new HttpMethod('UPDATE')
 
-  constructor(method) {
-    this.method = method
-    HttpMethod.#values.set(method, this)
+  private constructor(private readonly method: string) {
+    HttpMethod.values.set(method, this)
   }
 
   toString() {
     return this.method
   }
 
-  /**
-   * @param {string} value 
-   */
-  static ofValue(value) {
-    precondition(this.#values.has(value))
-    return HttpMethod.#values.get(value)
+  static ofValue(value: string) {
+    precondition(this.values.has(value))
+    return HttpMethod.values.get(value)
   }
   
 }
