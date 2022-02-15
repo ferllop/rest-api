@@ -1,0 +1,23 @@
+{
+  "extends": "@tsconfig/node16/tsconfig.json",
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es2020"],
+    "moduleResolution": "node",
+    "module": "es2020",
+    "declaration": true,
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "removeComments": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true
+  }
+}

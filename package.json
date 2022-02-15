@@ -2,12 +2,17 @@
   "name": "almighty-simple-rest-api",
   "version": "1.0.3",
   "description": "A simple rest api",
-  "main": "index.js",
+  "main": "./build/index.js",
+  "exports": {
+    ".": "./build.index.js"
+  },
   "type": "module",
   "scripts": {
+    "compile": "tsc -p tsconfig.build.json",
+    "build": "npm run compile",
     "example": "ENABLE_PRECONDITIONS=true node ./example/server.js",
     "example:watch": "ENABLE_PRECONDITIONS=true nodemon ./example/server.js",
-    "test": "ENABLE_PRECONDITIONS=true uvu ./test",
+    "test": "ENABLE_PRECONDITIONS=true uvu -r tsm ./test",
     "lint": "eslint ./"
   },
   "author": "Ferran Llop Alonso",
@@ -16,9 +21,13 @@
     "@babel/core": "^7.14.6",
     "@babel/eslint-parser": "^7.14.7",
     "@babel/preset-env": "^7.14.7",
+    "@tsconfig/node16": "1.0.2",
+    "@types/node": "17.0.18",
     "eslint": "^7.29.0",
     "eslint-plugin-jsdoc": "^35.4.1",
     "nodemon": "^2.0.9",
+    "tsm": "2.2.1",
+    "typescript": "4.5.5",
     "uvu": "^0.5.1"
   },
   "dependencies": {
